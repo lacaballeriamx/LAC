@@ -91,3 +91,18 @@
 </script>
 <p>
 <p>
+
+
+.css
+a:hover {
+  color: lightgrey;
+}
+
+body {
+    text-align: center;
+  font-family: 'Inter';
+  font-size: 1.6em;
+  line-height: 1.2em;
+  letter-spacing: -.08rem;
+  color: #000000;
+}
