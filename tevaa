@@ -1,0 +1,93 @@
+<a style="font-size: 5.2em;" id="myButton" onClick="onClick()" href='#'>
+<b>?</b>
+</a>
+
+<a style=color:#f8f8f8;>.</a>
+<div id="myRandomDiv">
+</div>
+
+<script type="text/javascript" charset="utf-8">
+// lista y random
+
+        var randomStrings = [
+        "Si sólo pudieras comer un alimento el resto de tu vida, ¿cuál sería?",
+        "¿Cuál es tu lugar favorito en la tierra?",
+        "¿Cuál es la peor película que has visto?", 
+        "¿Cuál es la primera película que recuerdas haber visto en el cine?",
+        "¿Hay alguna serie que vuelves a ver cada cierto tiempo?",
+        "¿Cuál es el mejor concierto al que has asistido?",
+        "¿Cuál fue el primer grupo o artista del que fuiste fan?",
+        "¿Cuál es la peor cita que has tenido?",
+        "¿Prefieres pasar frío o calor?",
+        "¿Cuál es el mejor libro que has leído?",
+        "¿Qué libro marcó tu infancia?",
+        "¿Qué película marcó tu infancia?",
+        "Si solo pudieras llevar tres cosas a una isla desierta, ¿qué elegirías?",
+        "Si pudieras salvar una pertenencia de un incendio, ¿qué salvarías?",
+        "¿Cuál es tu posesión material que tiene más valor emocional?",
+        "¿Prefieres los juegos de equipo o individuales?",
+        "¿Qué es lo que más temes?",
+        "¿Qué es lo que más te apasiona?",
+        "¿Alguna vez has soñado algo que luego se ha hecho realidad?",
+        "Si tuvieras 10 millones de seguidores en redes sociales, ¿de qué temas hablarías?",
+        "¿Qué es lo que más valoras en una amistad?",
+        "¿Qué sueño tienes pendiente de cumplir?",
+        "¿Está bien mentir alguna vez?",
+        "¿Quién es el famoso más sobrevalorado?",
+        "¿Cuál es el peor asiento de un avión?",
+        "¿Qué te dicen las personas que visten siempre del mismo color?",
+        "¿Crees que un jefe puede ser un amigo de verdad?",
+        "¿Cuál es el mejor cumplido que has recibido?",
+        "¿Qué canción pedirías que sonara en tu última despedida?",
+        "¿Qué es lo que más te gusta de ti?",
+        "¿Qué canción no puedes escuchar sin llorar?",
+        ];
+
+
+        var randomDiv = document.getElementById("myRandomDiv");
+        var previousRandomIndex = -1;
+
+        document.getElementById("myButton").addEventListener("click", function() {
+            var randomIndex = Math.floor(Math.random() * randomStrings.length);
+
+            if (randomIndex === previousRandomIndex) {
+                randomIndex = (randomIndex + 1) % randomStrings.length;
+            }
+
+            previousRandomIndex = randomIndex;
+
+            var newText = randomStrings[randomIndex];
+            randomDiv.innerHTML = newText;
+
+
+        });
+    </script>
+
+
+
+<script>
+// clock and counter
+
+    var clicks = 0;
+
+    function onClick() {
+    clicks += 1;
+    document.getElementById("clicks").innerHTML = clicks;
+    };
+
+
+
+    document.getElementById("myButton").addEventListener("click", function() {
+
+    var sec = 0;
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        document.getElementById("seconds").innerHTML=pad(++sec%60);
+        document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+    }, 1000);
+ 
+    }, { once: true });
+
+</script>
+<p>
+<p>
